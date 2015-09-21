@@ -5,6 +5,10 @@ fn fib(n: usize) -> usize {
         return 1;
     }
 
+    // Using Dijkstra's formula for integer Fibonacci calculation:
+    //
+    // fib(n) = (2 * fib(n/2 - 1) + fib(n/2)) * fib(n/2)  } if n is even
+    // fib(n) = fib(n+1 / 2)^2 + fib((n+1 / 2) - 1)^2     } if n is odd
     if n % 2 == 0 {
         let fib_n_half = fib(n / 2);
         let fib_n_half_less_1 = fib((n / 2) - 1);
